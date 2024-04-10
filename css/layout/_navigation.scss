@@ -24,7 +24,7 @@ input {
       text-decoration: none;
       font-size: 1.8rem;
       font-weight: 500;
-      padding: 0.9rem 1.5rem;
+      padding: 0.9rem 2.5rem;
       border-radius: 0.5rem;
       transition: all 0.3s ease;
       color: $color-white;
@@ -143,12 +143,12 @@ input {
       position: static;
       opacity: 0;
       visibility: visible;
-      max-height: 0px;
+      max-height: 0;
       transition: all 0.3s ease;
       padding: 0;
       border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
-         border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-         width: 100%;
+      border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+      width: 100%;
    }
    .mega-box {
       position: static;
@@ -160,29 +160,55 @@ input {
       // z-index: 5;
       // position: relative;
       &__content {
-         flex-direction: column;
+         flex-direction: column-reverse;
          align-items: center;
          border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
          border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-
+      }
+      &__row {
+         width: calc(100%);
       }
       &__list {
          border-left: 0;
       }
+      &__title {
+         margin: 0;
+         font-size: 2rem;
+      }
    }
-   #showDrop:checked ~ .drop-menu {
-      // visibility: visible;
-      max-height: 100%;
-      background: inherit;
-      opacity: 1;
-      box-shadow: none;
+   #showDrop:checked {
+      & ~ .drop-menu {
+         // visibility: visible;
+         max-height: 100%;
+         background: inherit;
+         opacity: 1;
+         box-shadow: none;
+      }
+      & ~ .arrow::before {
+         transform: rotate(47deg);
+         top: calc(50% - .2rem);
+      }
+      & ~ .arrow::after {
+         transform: rotate(315deg);
+         top: calc(50% - .2rem);
+      }
    }
-   #showMega:checked ~ .mega-box {
-      // visibility: visible;
-      max-height: 100%;
-      background: inherit;
-      opacity: 1;
-      box-shadow: none;
+   #showMega:checked {
+      & ~ .mega-box {
+         // visibility: visible;
+         max-height: 100%;
+         background: inherit;
+         opacity: 1;
+         box-shadow: none;
+      }
+      & ~ .arrow::before {
+         transform: rotate(47deg);
+         top: calc(50% - .2rem);
+      }
+      & ~ .arrow::after {
+         transform: rotate(315deg);
+         top: calc(50% - .2rem);
+      }
    }
 
    .menu-btn {
@@ -192,21 +218,20 @@ input {
       position: fixed;
       height: 100vh;
       width: 100%;
-      // max-width: 3.2rem;
       top: 0;
       left: -100%;
       background: #242526;
       display: block;
-      padding: 50px 10px;
-      // line-height: 50px;
+      padding: 5rem 3rem;
       overflow-y: auto;
-      box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.18);
       transition: all 0.3s ease;
       text-align: center;
       &__list {
          flex-direction: column;
+         position: relative;
       }
-      &__item{
+      &__item {
          width: 100%;
       }
    }
@@ -223,7 +248,7 @@ input {
       height: 2rem;
       background: transparent;
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.5s;
       span {
          position: absolute;
          // display: inline-block;
@@ -262,6 +287,70 @@ input {
       }
       span {
          opacity: 0;
+      }
+   }
+   .arrow {
+      // width: .3rem;
+      // height: .5rem;
+      // background: #d9d9d9;
+      // display: block;
+      position: relative;
+      &::after,
+      &::before {
+         content: "";
+         position: absolute;
+         display: block;
+         width: 0.2rem;
+         top: calc(50% + .2rem);
+         right: 0.8rem;
+         transform-origin: 50% 0.1rem;
+         height: 1rem;
+         background: $color-white;
+         border-radius: 0.5rem;
+         transition: transform 0.3s ease;
+      }
+      &::after {
+         transform: rotate(230deg);
+      }
+      &::before {
+         transform: rotate(130deg);
+      }
+   }
+}
+@media (min-width: 901px) {
+   .arrow {
+      // width: .3rem;
+      // height: .5rem;
+      // background: #d9d9d9;
+      // display: block;
+      position: relative;
+      &::after,
+      &::before {
+         content: "";
+         position: absolute;
+         display: block;
+         width: 0.2rem;
+         top: calc(50% + .2rem);
+         right: 0.8rem;
+         transform-origin: 50% 0.1rem;
+         height: 1rem;
+         background: $color-white;
+         border-radius: 0.5rem;
+         transition: transform 0.3s ease;
+      }
+      &::after {
+         transform: rotate(230deg);
+      }
+      &::before {
+         transform: rotate(130deg);
+      }
+      &:hover::before {
+         transform: rotate(47deg);
+         top: calc(50% - .2rem);
+      }
+      &:hover::after {
+         transform: rotate(315deg);
+         top: calc(50% - .2rem);
       }
    }
 }

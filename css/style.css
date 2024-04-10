@@ -183,7 +183,7 @@ input {
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 500;
-  padding: 0.9rem 1.5rem;
+  padding: 0.9rem 2.5rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   color: #fff;
@@ -302,7 +302,7 @@ input {
     position: static;
     opacity: 0;
     visibility: visible;
-    max-height: 0px;
+    max-height: 0;
     transition: all 0.3s ease;
     padding: 0;
     border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
@@ -318,13 +318,20 @@ input {
     padding: 0;
   }
   .mega-box__content {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
     border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
   }
+  .mega-box__row {
+    width: 100%;
+  }
   .mega-box__list {
     border-left: 0;
+  }
+  .mega-box__title {
+    margin: 0;
+    font-size: 2rem;
   }
   #showDrop:checked ~ .drop-menu {
     max-height: 100%;
@@ -332,11 +339,27 @@ input {
     opacity: 1;
     box-shadow: none;
   }
+  #showDrop:checked ~ .arrow::before {
+    transform: rotate(47deg);
+    top: calc(50% - 0.2rem);
+  }
+  #showDrop:checked ~ .arrow::after {
+    transform: rotate(315deg);
+    top: calc(50% - 0.2rem);
+  }
   #showMega:checked ~ .mega-box {
     max-height: 100%;
     background: inherit;
     opacity: 1;
     box-shadow: none;
+  }
+  #showMega:checked ~ .arrow::before {
+    transform: rotate(47deg);
+    top: calc(50% - 0.2rem);
+  }
+  #showMega:checked ~ .arrow::after {
+    transform: rotate(315deg);
+    top: calc(50% - 0.2rem);
   }
   .menu-btn {
     display: block;
@@ -349,14 +372,15 @@ input {
     left: -100%;
     background: #242526;
     display: block;
-    padding: 50px 10px;
+    padding: 5rem 3rem;
     overflow-y: auto;
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.18);
     transition: all 0.3s ease;
     text-align: center;
   }
   .nav__list {
     flex-direction: column;
+    position: relative;
   }
   .nav__item {
     width: 100%;
@@ -374,7 +398,7 @@ input {
     height: 2rem;
     background: transparent;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
   }
   .menu-btn span,
   .close-btn span {
@@ -416,5 +440,59 @@ input {
   }
   .close-btn span {
     opacity: 0;
+  }
+  .arrow {
+    position: relative;
+  }
+  .arrow::after, .arrow::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.2rem;
+    top: calc(50% + 0.2rem);
+    right: 0.8rem;
+    transform-origin: 50% 0.1rem;
+    height: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  .arrow::after {
+    transform: rotate(230deg);
+  }
+  .arrow::before {
+    transform: rotate(130deg);
+  }
+}
+@media (min-width: 901px) {
+  .arrow {
+    position: relative;
+  }
+  .arrow::after, .arrow::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.2rem;
+    top: calc(50% + 0.2rem);
+    right: 0.8rem;
+    transform-origin: 50% 0.1rem;
+    height: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  .arrow::after {
+    transform: rotate(230deg);
+  }
+  .arrow::before {
+    transform: rotate(130deg);
+  }
+  .arrow:hover::before {
+    transform: rotate(47deg);
+    top: calc(50% - 0.2rem);
+  }
+  .arrow:hover::after {
+    transform: rotate(315deg);
+    top: calc(50% - 0.2rem);
   }
 }/*# sourceMappingURL=style.css.map */
