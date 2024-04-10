@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/icon-font.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__logo"><a href="#">Logo</a></div>
+          <input type="radio" name="slider" id="menu-btn" />
+          <input type="radio" name="slider" id="close-btn" />
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <label for="close-btn" class="btn close-btn"><span></span></label>
+              <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+              <li class="nav__item">
+                <a href="#" class="nav__link desktop-item">Dropdown Menu</a>
+                <input type="checkbox" id="showDrop" />
+                <label for="showDrop" class="mobile-item">
+                  Dropdown Menu
+                </label>
+                <ul class="drop-menu">
+                  <li class="drop-menu__item"><a href="#">Drop menu 1</a></li>
+                  <li class="drop-menu__item"><a href="#">Drop menu 2</a></li>
+                  <li class="drop-menu__item"><a href="#">Drop menu 3</a></li>
+                  <li class="drop-menu__item"><a href="#">Drop menu 4</a></li>
+                </ul>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link desktop-item">Mega Menu</a>
+                <input type="checkbox" id="showMega" />
+                <label for="showMega" class="mobile-item"
+                  >Mega Menu</label
+                >
+                <div class="mega-box">
+                  <div class="mega-box__content">
+                    <div class="mega-box__row">
+                      <img
+                        class="mega-box__img"
+                        src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg"
+                        alt="Foto"
+                      />
+                    </div>
+                    <div class="mega-box__row">
+                      <h2 class="mega-box__title">Design Services</h2>
+                      <ul class="mega-box__list">
+                        <li><a href="#">Graphics</a></li>
+                        <li><a href="#">Vectors</a></li>
+                        <li><a href="#">Business cards</a></li>
+                        <li><a href="#">Custom logo</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-box__row">
+                      <h2 class="mega-box__title">Email Services</h2>
+                      <ul class="mega-box__list">
+                        <li><a href="#">Personal Email</a></li>
+                        <li><a href="#">Business Email</a></li>
+                        <li><a href="#">Mobile Email</a></li>
+                        <li><a href="#">Web Marketing</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-box__row">
+                      <h2 class="mega-box__title">Security services</h2>
+                      <ul class="mega-box__list">
+                        <li><a href="#">Site Seal</a></li>
+                        <li><a href="#">VPS Hosting</a></li>
+                        <li><a href="#">Privacy Seal</a></li>
+                        <li><a href="#">Website design</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Feedback</a>
+              </li>
+            </ul>
+          </nav>
+          <label for="menu-btn" class="btn menu-btn"><span></span></label>
+        </div>
+      </header>
+      <main class="main"></main>
+      <footer class="footer"></footer>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

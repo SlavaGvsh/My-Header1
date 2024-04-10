@@ -1,0 +1,20 @@
+.header {
+   background: $color-black;
+   &__container{
+      @include display-flex;
+      max-height: 7rem;
+      height: 7rem;
+      position: relative;
+   }
+   &__logo{
+      a{
+      color: $color-white;
+      font-size: 3rem;
+      font-weight: 800;
+      &:hover{
+         opacity: 0.5;
+      }
+      }
+   }
+  
+}
